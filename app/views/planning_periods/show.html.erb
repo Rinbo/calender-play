@@ -1,7 +1,13 @@
 <section class="grid-container">
-  <div class="shift-pattern">Patterns
-  <div>##display all patterns in model</div>
-  <div>##display button for creating a new button</div>
+  <div class="shift-pattern">
+    <% @planning_period.shift_patterns.each do |pattern|%>
+      <div class="pattern">
+        <p>Start Time: <%= pattern.shift_start%></p>
+        <p>Length: <%= pattern.shift_length%></p>
+        <p>Requirements: <%= pattern.requirements%></p>
+      </div>
+    <% end %>
+    <div class="pattern"><%= render partial: 'new_pattern' %></div>
   </div>
   <div class="shifts">
     <%= month_calendar do |date| %>

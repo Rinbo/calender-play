@@ -21,3 +21,17 @@
   height: 40vh;
   padding: 5px;
 }
+
+.pattern {
+  height: 7vh;
+  padding: 10px;
+  border: solid red;
+}
+
+.pattern-grid {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 5px;
+}

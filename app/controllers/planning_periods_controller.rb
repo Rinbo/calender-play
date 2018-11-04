@@ -3,6 +3,10 @@ class PlanningPeriodsController < ApplicationController
     @planning_periods = PlanningPeriod.all
   end
 
+  def show
+    @planning_period = PlanningPeriod.find(params[:id])
+  end
+
   def new
     @planning_period = PlanningPeriod.new
   end

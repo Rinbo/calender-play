@@ -1,0 +1,23 @@
+<%= form_with(model: [ @planning_period, @planning_period.shift_patterns.build ], local: true, class: 'pattern-grid') do |form| %>
+
+  <div class="field">
+    <%= form.label :shift_start %>
+    <%= form.time_field :shift_start %>
+  </div>
+  <div class="field">
+    <%= form.label :shift_length %>
+    <%= form.time_field :shift_length %>
+  </div>
+  <div class="field">
+    <%= form.label :break %>
+    <%= form.time_field :break %>
+  </div>
+  <div class="field">
+    <%= form.label :requirements %>
+    <%= form.text_field :requirements %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
