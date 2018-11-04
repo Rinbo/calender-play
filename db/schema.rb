@@ -10,13 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_03_203048) do
+ActiveRecord::Schema.define(version: 2018_11_04_182951) do
 
   create_table "meetings", force: :cascade do |t|
     t.string "name"
     t.datetime "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "planning_periods", force: :cascade do |t|
+    t.string "month"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shift_patterns", force: :cascade do |t|
+    t.integer "planning_period_id"
+    t.time "shift_start"
+    t.time "shift_length"
+    t.time "breaks"
+    t.string "requirements"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["planning_period_id"], name: "index_shift_patterns_on_planning_period_id"
   end
 
 end

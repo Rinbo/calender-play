@@ -1,0 +1,4 @@
+<h1>Created Planning Periods</h1>
+<% @planning_periods.each do |period|%>
+  <p><%= link_to period.month, planning_period_path(period) %></p>
+<%end%>
