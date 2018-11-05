@@ -1,2 +1,4 @@
-<h1>Shifts#show</h1>
-<p>Find me in app/views/shifts/show.html.erb</p>
+<h1><%= @shift.date %></h1>
+<p>Belongs to planning period: <%= @shift.shift_pattern.planning_period.id %></p>
+<p>Belongs to pattern: <%= @shift.shift_pattern.id %></p>
+<p>Requirements: <%= @shift.requirements %></p>

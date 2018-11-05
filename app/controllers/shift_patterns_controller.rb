@@ -12,7 +12,7 @@ class ShiftPatternsController < ApplicationController
     @planning_period = PlanningPeriod.find(params[:planning_period_id])
     @shift_pattern = @planning_period.shift_patterns.create(shift_pattern_params)
     get_period_header(@planning_period).each do |date|
-      @shift_pattern.shifts.create(date: date)
+      @shift_pattern.shifts.create(date: date, requirements: @shift_pattern.requirements)
     end
     
     flash[:notice] = "Pattern was successfully created."
