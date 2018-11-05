@@ -1,0 +1,6 @@
+<% get_period_header(@planning_period).each do |date| %>
+  <div class="date">
+    <p><%= Date::ABBR_DAYNAMES[date.wday]%></p>
+    <p><%= date.day%></p>
+  </div>
+<% end %>
