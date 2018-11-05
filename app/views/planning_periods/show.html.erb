@@ -14,8 +14,10 @@
       </div>
     <% end %>
     <div class="pattern"><%= render partial: 'new_pattern' %></div>
-  </div>
+  </div>  
   <div class="shifts">
-    <div class="row-grid"><%= render partial: 'new_shifts' %></div>  
+    <% @planning_period.shift_patterns.each do |pattern|%>
+      <div class="row-grid"><%= render partial: 'new_shifts', locals: {pattern: pattern} %></div>
+    <% end %>
   </div>
 </section>

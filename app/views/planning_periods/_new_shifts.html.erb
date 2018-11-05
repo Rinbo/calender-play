@@ -1,3 +1,3 @@
-<% get_days_in_month(@planning_period).times do %>
-  <div class="shift">Shift</div>
+<% pattern.shifts.each do |shift| %>
+  <div class="shift"><%= shift.date %></div>
 <% end %>  

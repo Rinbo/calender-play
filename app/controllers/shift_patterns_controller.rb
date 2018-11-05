@@ -1,4 +1,5 @@
 class ShiftPatternsController < ApplicationController
+  include ShiftPatternsHelper
   def index
     @shift_patterns = ShiftPattern.all
   end
@@ -10,6 +11,10 @@ class ShiftPatternsController < ApplicationController
   def create
     @planning_period = PlanningPeriod.find(params[:planning_period_id])
     @shift_pattern = @planning_period.shift_patterns.create(shift_pattern_params)
+    get_period_header(@planning_period).each do |date|
+      @shift_pattern.shifts.create(date: date)
+    end
+    
     flash[:notice] = "Pattern was successfully created."
     redirect_to planning_period_path(@planning_period)
   end

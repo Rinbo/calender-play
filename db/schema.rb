@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_04_182951) do
+ActiveRecord::Schema.define(version: 2018_11_05_121634) do
 
   create_table "meetings", force: :cascade do |t|
     t.string "name"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 2018_11_04_182951) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["planning_period_id"], name: "index_shift_patterns_on_planning_period_id"
+  end
+
+  create_table "shifts", force: :cascade do |t|
+    t.integer "shift_pattern_id"
+    t.integer "number_of_staff"
+    t.string "requirements"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shift_pattern_id"], name: "index_shifts_on_shift_pattern_id"
   end
 
 end

@@ -2,22 +2,23 @@
 
   <div class="field">
     <%= form.label :shift_start %>
-    <%= form.time_field :shift_start %>
+    <%= form.time_field :shift_start, class: "pattern-input"%>
   </div>
   <div class="field">
     <%= form.label :shift_length %>
-    <%= form.time_field :shift_length %>
+    <%= form.number_field :shift_length, class: "pattern-input" %>
   </div>
   <div class="field">
     <%= form.label :break %>
-    <%= form.time_field :break %>
+    <%= form.number_field :break, class: "pattern-input" %>
   </div>
   <div class="field">
     <%= form.label :requirements %>
-    <%= form.text_field :requirements %>
+    <%= form.text_field :requirements, class: "pattern-input" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="field">
+    <p></P>
+    <%= form.submit value: "Create pattern", class: "pattern-input" %>
   </div>
 <% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shift_pattern: one
+  number_of_staff: 1
+  requirements: MyString
+
+two:
+  shift_pattern: two
+  number_of_staff: 1
+  requirements: MyString

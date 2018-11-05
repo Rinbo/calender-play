@@ -22,27 +22,27 @@
   height: 40vh;
   overflow: scroll;
   padding-top:5px;
+  padding-bottom:5px;
 }
 
 .pattern {
   height: 10vh;
-  padding: 10px;
+  padding-top: 5px;
   border: solid red;
 }
 
 .pattern-grid {
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 5px;
 }
 
 .row-grid {
   overflow: hidden;
   padding-left: 10px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 2.25vw)
+  display: grid;  
+  grid-template-columns: repeat(auto-fill, 2.20vw);
+  border: solid white;
 }
 
 .date {
@@ -55,9 +55,19 @@
   text-align: center;
   vertical-align: middle;
   height: 10vh;
+  border: dotted grey;
+  overflow:hidden;
 }
 
 
 .date-header {
   border: solid white;
+}
+
+.month-input {
+  width: 200px;
+}
+
+.pattern-input {
+  width: 100px;
 }
